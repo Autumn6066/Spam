@@ -345,13 +345,13 @@ async function Login(token, Client, guildId) {
         const pokemon = await solveHint(message);
         if (pokemon[0]) {
           await sleep(300);
-          await message.channel.send("<@716390085896962058> c " + pokemon[0]);
+          await message.channel.send("\<@716390085896962058> c " + pokemon[0]');
           checkIfWrong = await message.channel
             .createMessageCollector({ time: 5000 })
             .on("collect", async (msg) => {
               if (msg.content.includes("That is the wrong pokémon!")) {
                 checkIfWrong.stop();
-                await msg.channel.send("<@716390085896962058> c " + pokemon[1]);
+                await msg.channel.send("\<@716390085896962058> c " + pokemon[1]);
 
                 checkIfWrong2 = await msg.channel
                   .createMessageCollector({ time: 5000 })
