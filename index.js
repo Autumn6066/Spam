@@ -345,7 +345,7 @@ async function Login(token, Client, guildId) {
         const pokemon = await solveHint(message);
         if (pokemon[0]) {
           await sleep(300);
-          await message.channel.send("\<@716390085896962058> c " + pokemon[0]');
+          await message.channel.send("\<@716390085896962058> c " + pokemon[0]);
           checkIfWrong = await message.channel
             .createMessageCollector({ time: 5000 })
             .on("collect", async (msg) => {
